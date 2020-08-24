@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  # main application
+  web:
+    container_name: streamlit-plotly-demo
+    build:
+          context: .
+          dockerfile: Dockerfile
+    image: streamlit-plotly:multi-stage-1.0
+    ports:
+      - "8501:8501"
