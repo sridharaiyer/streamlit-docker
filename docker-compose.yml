@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  streamlit:
+    build:
+      dockerfile: Dockerfile_3.9.6_slim_buster
+      context: ./
+    ports:
+      - '8501:8501'
+    volumes:
+      - './data:/usr/src/app/data:delegated'
+      - './project:/usr/src/app/project:delegated'
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
